@@ -195,6 +195,26 @@ public class PlayView extends View {
         myHandler.removeCallbacks(rotationRunnable);
     }
 
+
+    /**
+     * 释放资源
+     */
+    public void clear() {
+        if(coverBitmap!=null){
+            coverBitmap.recycle();
+        }
+        if(discBitmap!=null){
+            discBitmap.recycle();
+        }
+        if(needleBitmap!=null){
+            needleBitmap.recycle();
+        }
+        if(myHandler!=null){
+            myHandler.removeCallbacks(rotationRunnable);
+        }
+
+    }
+
     /**
      * 创建一个定时任务，定时改变图片的选择角度
      */
